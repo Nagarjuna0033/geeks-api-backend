@@ -13,9 +13,7 @@ export default function Search() {
     const getUser = async (e) => {
         e.preventDefault();
         try {
-            const res = await fetch(
-                "http://localhost:5000/getUser?user=" + user
-            );
+            const res = await fetch(`http://localhost:5000/user/${user}`);
             const result = await res.json();
             changeInfo(result);
             console.log(result);

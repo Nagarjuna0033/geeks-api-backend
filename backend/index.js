@@ -7,10 +7,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded());
 
-app.get("/getUser", async (req, res) => {
+app.get("/user/:user", async (req, res) => {
     console.log("getting");
     // ${req.query.user}
-    const response = await getInfo(req.query.user);
+    const response = await getInfo(req.params.user);
     // const result = await response.text();
 
     if (response.status === 200) {
